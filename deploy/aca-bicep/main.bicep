@@ -13,7 +13,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2022-09-01' = {
   location: location
 }
 
-module db './db.bicep' = {
+module db './modules/db.bicep' = {
   name: 'db-${now}'
   scope: rg
   params: {
@@ -23,7 +23,7 @@ module db './db.bicep' = {
   }
 }
 
-module aca './aca.bicep' = {
+module aca './modules/aca.bicep' = {
   name: 'aca-${now}'
   scope: rg
   params: {
