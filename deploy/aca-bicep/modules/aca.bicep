@@ -30,6 +30,10 @@ resource api 'Microsoft.App/containerApps@2022-06-01-preview' = {
       ]
     }
     template: {
+      scale: {
+        minReplicas: 1
+        maxReplicas: 10
+      }
       containers: [
         {
           name: 'api'
@@ -75,6 +79,10 @@ resource web 'Microsoft.App/containerApps@2022-06-01-preview' = {
       }
     }
     template: {
+      scale: {
+        minReplicas: 1
+        maxReplicas: 10
+      }
       containers: [
         {
           name: 'web'
